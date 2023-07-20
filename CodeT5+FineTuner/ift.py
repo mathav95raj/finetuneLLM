@@ -300,8 +300,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     os.makedirs(args.save_dir, exist_ok=True)
-    # import deepspeed
-    # deepspeed.init_distributed('NCCL',  init_method='env://')
+    import deepspeed
+    deepspeed.init_distributed('NCCL',  init_method='env://')
     # os.environ['LOCAL_RANK'] = '0'
     
     main(args)
